@@ -1,0 +1,31 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class="top-page-header">
+  <div class="header-bar-contents">
+    <div class="header-left">
+    BookHub
+    </div>
+    <ul class="header-right">
+      <%# <% if user_signed_in? %>
+        <li class="header-menu"><%= link_to '名前', "#", class: "user-name" %></li>
+        <li class="header-menu"><%= link_to 'ログアウト', '#', class: "logout" %></li>
+        <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" %>
+        <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+      <%# <% else %>
+        <li class="header-menu"><%= link_to 'ログイン', '#', class: "login" %></li>
+        <li class="header-menu"><%= link_to '新規登録', '#', class: "sign-up" %></li>
+        <%# <li><%= link_to 'ログイン', new_user_session_path, class: "login" %>
+        <%# <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+      <%# <% end %>
+    </ul>
+  </div>
+  <ul class="nav">
+    <div class="nav-left">
+      <li class="nav-menu"><%= link_to 'BookHubとは', '#' %></li>
+      <li class="nav-menu"><%= link_to '本を登録する', '#' %></li>
+      <li class="nav-menu"><%= link_to '本を検索する', '#' %></li>
+    </div>
+    <div class="nav-right">
+      <li class="mypage"><%= link_to 'マイページ', '#' %></li>
+    </div>
+  </ul>
+</header>
