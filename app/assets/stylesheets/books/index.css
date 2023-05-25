@@ -11,7 +11,7 @@
 .main-contents {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
-  padding: 10vh 15vh;
+  padding: 80px 150px;
   height: 100%;
 }
 
@@ -51,7 +51,7 @@
 .genre-list {
   display: flex;
   justify-content: space-between;
-  border: 1px #000 solid;
+  margin-bottom: 100px;
 }
 
 .genre-menu {

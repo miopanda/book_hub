@@ -88,7 +88,6 @@ a {
 .mypage {
   height: 9vh;
   padding: 0 50px 0 110px;
-
   display: flex;
   justify-content: center;
   border-radius: 100px;
@@ -101,4 +100,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fa-book-heart {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
 }

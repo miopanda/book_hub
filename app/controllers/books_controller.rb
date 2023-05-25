@@ -13,12 +13,14 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       redirect_to root_path
+      flash[:notice] = "本が登録されました"
     else
       render :new
     end
   end
 
   private
+
   def book_params
     params.require(:book).permit(:title, :publisher, :image_url).merge(user_id: current_user.id)
   end
