@@ -17,11 +17,12 @@
   <ul class="nav">
     <div class="nav-left">
       <li class="nav-menu"><%= link_to 'BookHubとは', '#' %></li>
-      <li class="nav-menu"><%= link_to '本を登録する', '#' %></li>
-      <li class="nav-menu"><%= link_to '本を検索する', '#' %></li>
+      <li class="nav-menu"><%= link_to '本を登録する', new_book_path %></li>
+      <li class="nav-menu"><%= link_to 'リクエストする', '#' %></li>
     </div>
     <div class="nav-right">
-      <li class="mypage"><%= link_to 'マイページ', '#' %></li>
+    
+      <div class="mypage"><%= link_to "マイページ", '#' %></div>
     </div>
   </ul>
 </header>
