@@ -12,9 +12,9 @@ a {
 
 .top-page-header {
   width: 100vw;
-  background-image: url('bookhub_top_bg.jpg');
-  background-size: cover;
-  padding: 7vh 15vw 2vh;
+  /* background-image: url('bookhub_top_bg.jpg');
+  background-size: cover; */
+  padding: 7vh 15vw 5vh;
   display: flex;
   flex-direction: column;
 }
@@ -87,7 +87,7 @@ a {
 }
 
 .mypage {
-  line-height: 7vh;
+  line-height: 8vh;
   padding: 0 50px 0 110px;
   border-radius: 100px;
   background-color: #fff;
