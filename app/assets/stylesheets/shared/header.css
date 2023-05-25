@@ -12,8 +12,6 @@ a {
 
 .top-page-header {
   width: 100vw;
-  /* background-image: url('bookhub_top_bg.jpg');
-  background-size: cover; */
   padding: 7vh 15vw 5vh;
   display: flex;
   flex-direction: column;
