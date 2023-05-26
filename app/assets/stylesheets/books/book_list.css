@@ -1,0 +1,33 @@
+.book-list-wrapper{
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.book-lists {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #FFF;
+  padding: 20px;
+}
+
+.book-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.book-img-content {
+  position: relative;
+}
+
+.book-img {
+  width: 24vh;
+  height: 30vh;
+  object-fit: cover;
+}
