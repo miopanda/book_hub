@@ -76,7 +76,7 @@ https://docs.google.com/spreadsheets/d/1Vmngigcma3A-DWuDpacijJWO6sQYdDQlLaKbuy0A
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| book   | references | null: false, foreign_key: true |
 | due_date   | date   | null: false |
 | returned   | boolean   | null: false, default: false |
 

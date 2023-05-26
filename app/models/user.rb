@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :books
+  has_many :loans
+  has_many :borrowed_books, through: :loans, source: :book
 
   validates :name, presence: true
 end
