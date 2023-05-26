@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get 'books/index'
   root to: "books#index"
 
-  resources :books, only: [:index, :new, :create, :show]
+  resources :books, only: [:index, :new, :create, :show] do
+    resources :loans, only: [:new, :create, :edit, :update]
+  end
 end

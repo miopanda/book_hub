@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_25_035034) do
+ActiveRecord::Schema.define(version: 2023_05_26_022324) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2023_05_25_035034) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "loans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.date "due_date", null: false
+    t.boolean "returned", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_loans_on_book_id"
+    t.index ["user_id"], name: "index_loans_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,4 +48,6 @@ ActiveRecord::Schema.define(version: 2023_05_25_035034) do
   end
 
   add_foreign_key "books", "users"
+  add_foreign_key "loans", "books"
+  add_foreign_key "loans", "users"
 end

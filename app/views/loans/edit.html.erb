@@ -1,0 +1,30 @@
+<div class="contents row">
+  <div class="container">
+
+    <h3>返却する本の確認</h3>
+
+    <div class='lend-book-info'>
+      <%= image_tag @book.image_url, class: 'book-img' %>
+      <div class='lend-book-right-content'>
+        <h2 class='lend-book-text'>
+          <%= @book.title %>
+        </h2>
+        <h2 class='lend-book-publisher'>
+          <%= @book.publisher %>
+        </h2>
+      </div>
+    </div>
+
+    <%= form_with model: [@book, @loan], url: book_loan_path(@book, @loan), method: :patch, local: true do |f| %>
+      <div class='lend-btn'>
+        <%# <input type="hidden" name="loan[due_date]" id="hidden-due-date"> %>
+        <%= f.hidden_field :due_date, value: @loan.due_date %>
+        <%= f.hidden_field :returned, value: true %>
+        <%= f.submit "返却", class:"lend-red-btn", id:"return-button" %>
+      </div>
+    <% end %>
+
+    <%= link_to '戻る', book_path(@book.id) %>
+
+  </div>
+</div>
