@@ -22,7 +22,7 @@
             <% end %>
           <% else %>
             <p class="status-btn blue">貸出可</p>
-            <%= link_to "貸出を申請する", new_book_loan_path(@book.id), class: "book-red-btn" %>
+            <%= link_to "貸出を申請する", "#", class: "book-red-btn", id: "lend-btn" %>
           <% end %>
       <% end %>
     </div>
@@ -37,5 +37,72 @@
       <a href="#" class="change-book-btn">
         後ろの本 ＞
       </a>
-    </div>
+  </div>
 </div>
+
+<%# 貸出確認ダイアログ %>
+
+<div class="confirmation-dialog-wrapper" id="confirmation-dialog" >
+  <div class="container">
+    <div id="close-btn">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+    </div>
+
+    <h3>貸出内容の確認</h3>
+    <div class='lend-book-info'>
+      <%= image_tag @book.image_url, class: 'book-img' %>
+      <div class='lend-book-right-content'>
+        <h2 class='lend-book-text'>
+          <%= @book.title %>
+        </h2>
+        <h2 class='lend-book-publisher'>
+          <%= @book.publisher %>
+        </h2>
+      </div>
+    </div>
+
+    <%= form_with model: @loan, url: book_loans_path(@book.id), method: :post, local: true do |f| %>
+      <div class="book-due-date">
+        <span>貸出期限 : </span>
+        <span>
+          <span id='due-date'></span>
+        </span>
+      </div>
+      <div class='lend-btn'>
+        <input type="hidden" name="loan[due_date]" id="hidden-due-date">
+        <%= f.hidden_field :returned, value: false %>
+        <%= f.submit "貸出申請", class:"lend-red-btn", id:"button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# 貸出確認ダイアログここまで %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#close-btn").on("click", function(){
+      $("#confirmation-dialog").hide();
+    });
+  });
+  
+  $(document).ready(function() {
+    var dueDate = new Date();
+    dueDate.setDate(dueDate.getDate() + 14); // 今日の日付から2週間後の日付を計算
+    var year = dueDate.getFullYear();
+    var month = ("0" + (dueDate.getMonth() + 1)).slice(-2);
+    var day = ("0" + dueDate.getDate()).slice(-2);
+    var formattedDate = year + "-" + month + "-" + day;
+    $("#due-date").text(formattedDate); // IDはハイフンを使用
+
+    $("#lend-btn").on("click", function() {
+      $("#confirmation-dialog").fadeIn();
+    });
+
+    $("form").on("submit", function(event) {
+      $("#hidden-due-date").val(formattedDate); 
+      return true;
+    });
+  });
+</script>
