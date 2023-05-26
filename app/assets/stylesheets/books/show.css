@@ -27,3 +27,20 @@
 .change-book-btn {
   margin-left: 20px;
 }
+
+.status-btn{
+  border: 1px solid;
+  border-radius: 50px;
+  width: 70px;
+  /* height: 40px; */
+  text-align: center;
+  /* align-items: center; */
+  line-height: 40px;
+}
+
+.blue{
+  background-color: #3ccace;
+}
+.pink{
+  background-color: pink;
+}

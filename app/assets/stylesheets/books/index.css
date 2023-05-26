@@ -39,6 +39,7 @@
   height: 60px;
   border-radius: 10px;
   margin-bottom: 1rem;
+  border: 3px solid #ccc;
 }
 
 .submit {
@@ -46,6 +47,7 @@
   height: 60px;
   border-radius: 10px;
   cursor: pointer;
+  border: 2px solid #ccc;
 }
 
 .genre-list {
