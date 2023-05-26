@@ -16,22 +16,23 @@
   </div>
 </div>
 
+<div class="reg-book-wrapper">
+  <h3 class="section-title">登録する本の情報を検索する</h3>
 
-<h3>登録する本の情報を検索する</h3>
+  <div class="search">
+    <input id="key" class="keyword" type="text" placeholder="Google ブックスから検索">
+    <button id="search" class="submit search-btn">検索</button>
+  </div>
 
-<div class="search">
-  <input id="key" type="text" placeholder="Google ブックスから検索">
-  <button id="search">検索</button>
-</div>
-
-<div>
-  <table id="books">
-    <tr>
-      <td style="width:400px">本のタイトル</td>
-      <td style="width:200px">出版社</td>
-      <td style="width:300px">画像</td>
-    </tr>
-  </table>
+  <div>
+    <table id="books">
+      <tr>
+        <td class="item-name">本のタイトル</td>
+        <td class="item-name">出版社</td>
+        <td class="item-name">画像</td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
