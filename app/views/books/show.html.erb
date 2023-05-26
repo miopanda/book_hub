@@ -1,0 +1,28 @@
+<div class="book-show-wrapper">
+
+  <div class="book-show">
+    <h2 class="title">
+      <%= @book.title %>
+    </h2>
+    <div class="book-box">
+      <div class="book-img-content">
+        <%= image_tag @book.image_url ,class:"book-box-img" %>
+      </div>
+      
+      <h3 class="publisher">
+        <%= @book.publisher %>
+      </h3>
+
+      
+    </div>
+
+  </div>
+  <div class="links">
+      <a href="#" class="change-book-btn">
+        ＜ 前の本
+      </a>
+      <a href="#" class="change-book-btn">
+        後ろの本 ＞
+      </a>
+    </div>
+</div>
