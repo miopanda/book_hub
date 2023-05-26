@@ -3,7 +3,7 @@
   height: 780px;
   background-image: url('bookhub_top_bg.jpg');
   background-size: cover;
-  padding: 15vh 15vw;
+  padding: 100px 300px;
   display: flex;
   flex-direction: column;
 }
