@@ -6,7 +6,7 @@
     </div>
     <ul class="header-right">
       <% if user_signed_in? %>
-        <li class="header-menu"><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li class="header-menu"><%= link_to current_user.name, user_path(current_user), class: "user-name" %></li>
         <li class="header-menu"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li class="header-menu"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

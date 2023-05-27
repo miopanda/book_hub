@@ -1,0 +1,41 @@
+<h2 class="page-heading">
+  <%= "#{@name}さんの情報"%>
+</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th class="table__col1">名前</th>
+      <td class="table__col2"><%= @name %></td>
+    </tr>
+    <tr>
+      <th class="table__col1">メールアドレス</th>
+      <td class="table__col2"><%= @email %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="page-heading">
+  <%= "#{@name}さんの登録した本"%>
+</h2>
+<% if @books.present? %>
+  <% @books.each do |book| %>
+    <div class="card">
+      <%= link_to book.title, book_path(book), class: :card__title %>
+    </div>
+  <% end %>
+<% else %>
+  <p>登録した本はありません。</p>
+<% end %>
+
+<h2 class="page-heading">
+  <%= "#{@name}さんの借りた本"%>
+</h2>
+<% if @borrowed_books.present? %>
+  <% @borrowed_books.each do |book| %>
+    <div class="card">
+      <%= link_to book.title, book_path(book), class: :card__title %>
+    </div>
+  <% end %>
+<% else %>
+  <p>本を借りた履歴はありません。</p>
+<% end %>
