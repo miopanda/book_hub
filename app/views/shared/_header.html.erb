@@ -6,7 +6,6 @@
     </div>
     <ul class="header-right">
       <% if user_signed_in? %>
-        <li class="header-menu"><%= link_to current_user.name, user_path(current_user), class: "user-name" %></li>
         <li class="header-menu"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li class="header-menu"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -21,8 +20,12 @@
       <li class="nav-menu"><%= link_to 'リクエストする', '#' %></li>
     </div>
     <div class="nav-right">
-      <%# <div><i class="fa-duotone fa-book-open-reader"></i></div> %>
-      <div class="mypage"><%= link_to "マイページ", '#' %></div>
+      <% if user_signed_in? %>
+        <div class="mypage"><%= link_to "#{current_user.name}さん", user_path(current_user), class: "user-name" %></div>
+      <% else %>
+        <div class="mypage"><%= link_to "マイページ", new_user_session_path %></div>
+      <% end %>
+      
     </div>
   </ul>
 </header>

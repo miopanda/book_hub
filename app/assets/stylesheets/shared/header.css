@@ -57,7 +57,7 @@ a {
   height: 9vh;
   margin-top: 5vh;
   border-radius: 100px;
-  font-size: 21px;
+  font-size: 20px;
   background-color: #7DC5C5;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
@@ -85,7 +85,7 @@ a {
 }
 
 .mypage {
-  height: 9vh;
+  height: 100%;
   padding: 0 90px;
   display: flex;
   justify-content: center;
@@ -99,13 +99,5 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.05rem;
+  font-size: 15px;
 }
-
-/* .fa-book-heart {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: rgba(128, 128, 128, 0.46);
-  cursor: pointer;
-} */

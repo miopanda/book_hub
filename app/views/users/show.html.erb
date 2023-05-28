@@ -1,6 +1,6 @@
 <%= render "shared/second-header" %>
 
-<div class="user-show-wrapper">
+<div class="book-list-wrapper">
 
   <h2 class="page-heading">
     <%= "#{@name}さんの情報"%>
@@ -17,59 +17,59 @@
       </tr>
     </tbody>
   </table>
-  
-  <h2 class="page-heading">
-    <%= "#{@name}さんの登録した本"%>
-  </h2>
-  <% if @books.present? %>
-  
-    <% @books.each do |book| %>
-      <li class='list'>
-        <%= link_to book_path(book.id) do %>
-          <div class='book-img-content'>
-            <%= image_tag book.image_url, class: "book-img" %>
-          </div>
-          <div class='book-info'>
-            <h3 class='book-title'>
-              <%= book.title %>
-            </h3>
-            <h3 class='book-publisher'>
-              <%= book.publisher %>
-            </h3>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  
-  <% else %>
-    <p>登録した本はありません。</p>
-  <% end %>
-  
+
   <h2 class="page-heading">
     <%= "#{@name}さんの貸出履歴"%>
   </h2>
   <% if @borrowed_books.present? %>
-  
-    <% @borrowed_books.each do |book| %>
-      <li class='list'>
-        <%= link_to book_path(book.id) do %>
-          <div class='book-img-content'>
-            <%= image_tag book.image_url, class: "book-img" %>
-          </div>
-          <div class='book-info'>
-            <h3 class='book-title'>
-              <%= book.title %>
-            </h3>
-            <h3 class='book-publisher'>
-              <%= book.publisher %>
-            </h3>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  
+    <ul class="book-lists">
+      <% @borrowed_books.each do |book| %>
+        <li class='list'>
+          <%= link_to book_path(book.id) do %>
+            <div class='book-img-content'>
+              <%= image_tag book.image_url, class: "book-img" %>
+            </div>
+            <div class='book-info'>
+              <h3 class='book-title'>
+                <%= book.title %>
+              </h3>
+              <h3 class='book-publisher'>
+                <%= book.publisher %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   <% else %>
     <p>本を借りた履歴はありません。</p>
+  <% end %>
+
+  <h2 class="page-heading">
+    <%= "#{@name}さんの登録した本"%>
+  </h2>
+  <% if @books.present? %>
+    <ul class="book-lists">
+      <% @books.each do |book| %>
+        <li class='list'>
+          <%= link_to book_path(book.id) do %>
+            <div class='book-img-content'>
+              <%= image_tag book.image_url, class: "book-img" %>
+            </div>
+            <div class='book-info'>
+              <h3 class='book-title'>
+                <%= book.title %>
+              </h3>
+              <h3 class='book-publisher'>
+                <%= book.publisher %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>登録した本はありません。</p>
   <% end %>
 
 </div>
