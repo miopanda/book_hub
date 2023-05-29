@@ -86,7 +86,7 @@ a {
 
 .mypage {
   height: 100%;
-  padding: 0 90px;
+  padding: 0 50px;
   display: flex;
   justify-content: center;
   border-radius: 100px;
@@ -99,5 +99,5 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 20px;
 }
