@@ -95,5 +95,5 @@ https://docs.google.com/spreadsheets/d/1Vmngigcma3A-DWuDpacijJWO6sQYdDQlLaKbuy0A
 Ruby / Ruby on Rails / MySQL / Github / Render / Visual Studio Code / Figma
 
 # 工夫したポイント
-・本の登録時、タイトル等の書籍情報は、Google Books APIから取得することで手入力せずに登録できるようにしました。
-・貸出・返却は、boolean型（真偽値）で状態の判断ができるようにしました。
+- 本の登録時、タイトル等の書籍情報は、Google Books APIから取得することで手入力せずに登録できるようにしました。
+- 貸出・返却は、boolean型（真偽値）で状態の判断ができるようにしました。
