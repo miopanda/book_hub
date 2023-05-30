@@ -1,0 +1,13 @@
+<%= link_to "リクエスト一覧", requests_path, class:"post" %>
+
+<%= form_with model: @request, local: true do |f| %>
+  <div class="request-form">
+    リクエストを投稿する
+    <%= f.collection_select(:request_type_id, RequestType.all, :id, :name, {}, {class:"type-select"}) %>
+    <%= f.text_field :title, class:"title", placeholder:"タイトル" %>
+    <%= f.text_area :message, class:"message", placeholder:"メッセージ" %>
+    <%= f.hidden_field :resolved, value: false %>
+    
+    <%= f.submit "投稿する" ,class:"btn" %>
+  </div>
+<% end %>

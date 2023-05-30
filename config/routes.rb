@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'requests/index'
+  get 'requests/new'
   devise_for :users
   root to: "books#index"
 
@@ -7,4 +9,6 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :new, :create, :show] do
     resources :loans, only: [:new, :create, :edit, :update]
   end
+
+  resources :requests, only: [:index, :new, :create]
 end
