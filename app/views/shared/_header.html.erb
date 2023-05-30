@@ -2,7 +2,9 @@
 <header class="top-page-header">
   <div class="header-bar-contents">
     <div class="header-left">
-    BookHub
+      <%= link_to root_path, class: "main-logo" do %>
+      BookHub
+      <% end %>
     </div>
     <ul class="header-right">
       <% if user_signed_in? %>
@@ -17,7 +19,7 @@
     <div class="nav-left">
       <li class="nav-menu"><%= link_to 'BookHubとは', '#' %></li>
       <li class="nav-menu"><%= link_to '本を登録する', new_book_path %></li>
-      <li class="nav-menu"><%= link_to 'リクエストする', '#' %></li>
+      <li class="nav-menu"><%= link_to 'リクエストする', new_request_path %></li>
     </div>
     <div class="nav-right">
       <% if user_signed_in? %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_26_022324) do
+ActiveRecord::Schema.define(version: 2023_05_30_034720) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2023_05_26_022324) do
     t.index ["user_id"], name: "index_loans_on_user_id"
   end
 
+  create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "request_type_id", null: false
+    t.text "message", null: false
+    t.boolean "resolved", default: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -50,4 +60,5 @@ ActiveRecord::Schema.define(version: 2023_05_26_022324) do
   add_foreign_key "books", "users"
   add_foreign_key "loans", "books"
   add_foreign_key "loans", "users"
+  add_foreign_key "requests", "users"
 end
