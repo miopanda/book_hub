@@ -2,7 +2,9 @@
 <header class="top-page-header">
   <div class="header-bar-contents">
     <div class="header-left">
-    BookHub
+      <%= link_to root_path, class: "main-logo" do %>
+      BookHub
+      <% end %>
     </div>
     <ul class="header-right">
       <% if user_signed_in? %>
