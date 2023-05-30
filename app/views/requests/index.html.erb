@@ -1,16 +1,19 @@
-<h1>記事一覧</h1>
+<div class="requests-index-wrapper">
 
+  <h3 class="request-title">リクエスト一覧</h3>
 
-<% @articles.each do |article| %>
-  <div class="article">
-    <div class="article-genre">
-      <%= article.genre.name %>
+  <% @requests.each do |request| %>
+    <div class="request">
+      <div class="request-type">
+        <%= request.request_type.name %>
+      </div>
+      <div class="request-title">
+        <%= request.title %>
+      </div>
+      <div class="request-message">
+        <%= request.message %>
+      </div>
     </div>
-    <div class="article-title">
-      <%= article.title %>
-    </div>
-    <div class="article-text">
-      <%= article.text %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+
+</div>
