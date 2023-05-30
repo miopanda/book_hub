@@ -1,19 +1,32 @@
-<%= render "shared/second-header" %>
+<div id="request" class="big-bg">
 
-<div class="requests-wrapper">
+  <div class="request-wrapper">
+    <h2 class="request-title">リクエスト</h2>
 
-<%= form_with model: @request, local: true do |f| %>
-  <div class="request-form">
-    <h3 class="request-title">リクエストを投稿する</h3>
-    <%= f.collection_select(:request_type_id, RequestType.all, :id, :name, {}, {class:"type-select"}) %>
-    <%= f.text_field :title, class:"title", placeholder:"タイトル" %>
-    <%= f.text_area :message, class:"message", placeholder:"メッセージ" %>
-    <%= f.hidden_field :resolved, value: false %>
-    
-    <%= f.submit "投稿する" ,class:"btn" %>
+    <%= form_with model: @request, local: true do |f| %>
+      <div class="request-form">
+        <div>
+          <label for="name">お名前</label>
+          <%= "#{@user.name}さん" %>
+        </div>
+
+        <div>
+          <label for="request_type">お問合せ内容</label>
+          <%= f.collection_select(:request_type_id, RequestType.all, :id, :name, {}, {class:"type-select"}) %>
+        </div>
+
+        <div>
+          <label for="request-message">メッセージ</label>
+          <%= f.text_area :message, id:"message", class:"message", placeholder:"メッセージ" %>
+        </div>
+
+        <%= f.hidden_field :resolved, value: false %>
+
+        <%= f.submit "送信" ,class:"btn" %>
+      </div>
+    <% end %>
+
+    <%= link_to "リクエスト一覧", requests_path, class:"post" %>
   </div>
-<% end %>
-
-<%= link_to "リクエスト一覧", requests_path, class:"post" %>
 
 </div>

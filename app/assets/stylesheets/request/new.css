@@ -1,35 +1,10 @@
-.request-form {
-  height:800px;
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+#request {
+  background-image: url('bookhub_contact_bg.jpg');
+  min-height: 100vh;
+  opacity: 0.7;
 }
 
-.title {
-  height: 30px;
-  width: 300px;
-  margin: 20px;
-}
-
-.message {
-  height: 100px;
-  width: 300px;
-  resize:none;
-  margin-bottom: 20px;
-}
-
-.type-select{
-  height: 30px;
-  width: 250px;
-}
-
-.btn {
-  width: 200px;
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid white;
-  background-color: orange;
-  color: white;
+.big-bg {
+  background-size: cover;
+  background-position: center top;
 }

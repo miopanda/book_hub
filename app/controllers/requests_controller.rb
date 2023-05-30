@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @user = current_user
   end
 
   def create
@@ -19,6 +20,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:request_type_id, :title, :message, :resolved).merge(user_id: current_user.id)
+    params.require(:request).permit(:request_type_id, :message, :resolved).merge(user_id: current_user.id)
   end
 end
