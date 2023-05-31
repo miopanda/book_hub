@@ -43,6 +43,7 @@
   border: 3px solid #ccc;
 }
 
+/* 検索ボタン */
 .search-btn {
   width: 100px;
   height: 60px;
@@ -57,6 +58,24 @@
   background-color: #5a9f9f;
   color: #fff;
 }
+/* 検索ボタン */
+
+/* クリアボタン */
+.clear-search-btn {
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 15px;
+  background-color: lightgray;
+  border: none;
+}
+
+.clear-search-btn:hover {
+  background-color: darkgray;
+  color: #fff;
+}
+/* クリアボタン */
 
 .genre-list {
   display: flex;

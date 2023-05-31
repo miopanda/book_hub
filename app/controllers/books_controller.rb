@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :move_to_index, only: [:new, :create]
 
   def index
     @books = Book.includes(:user).order("created_at ASC")
@@ -26,9 +27,21 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    @books = Book.search(params[:keyword])
+    flash[:notice] = "検索完了" if params[:keyword].present?
+  end
+  
+
   private
 
   def book_params
     params.require(:book).permit(:title, :publisher, :image_url).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end

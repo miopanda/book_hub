@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :books, only: [:index, :new, :create, :show] do
     resources :loans, only: [:new, :create, :edit, :update]
+    collection do
+      get 'search'
+    end
   end
 
   resources :requests, only: [:index, :new, :create]
