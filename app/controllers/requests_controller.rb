@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user_id = current_user.id
     if @request.save
-      redirect_to root_path
+      redirect_to requests_path
     else
       render :new
     end
