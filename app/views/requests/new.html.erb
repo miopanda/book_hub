@@ -1,13 +1,17 @@
 <div id="request" class="big-bg">
 
   <div class="request-wrapper">
-    <h2 class="request-title">リクエスト</h2>
+    <h2 class="request-title"><span>■</span>リクエスト</h2>
+    <p>本の購入リクエストや貸出・返却についてなど何かございましたら、<br>
+    以下のフォームよりお問い合わせください。</p>
 
     <%= form_with model: @request, local: true do |f| %>
       <div class="request-form">
         <div>
-          <label for="name">お名前</label>
-          <%= "#{@user.name}さん" %>
+          <label for="name">お名前：</label>
+          <% if user_signed_in? %>
+            <%= "#{@user.name}さん" %>
+          <% end %>
         </div>
 
         <div>
@@ -16,7 +20,7 @@
         </div>
 
         <div>
-          <label for="request-message">メッセージ</label>
+          <label for="request-message">お問合せ内容をご記入ください</label>
           <%= f.text_area :message, id:"message", class:"message", placeholder:"メッセージ" %>
         </div>
 
@@ -27,6 +31,9 @@
     <% end %>
 
     <%= link_to "リクエスト一覧", requests_path, class:"post" %>
+    <div>
+      <%= link_to "もどる", root_path, class:"post" %>
+    </div>
   </div>
 
 </div>

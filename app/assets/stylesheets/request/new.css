@@ -1,3 +1,4 @@
+/* 背景画像 */
 #request {
   background-image: url('bookhub_contact_bg.jpg');
   min-height: 100vh;
@@ -7,4 +8,69 @@
 .big-bg {
   background-size: cover;
   background-position: center top;
+}
+
+/* フォーム位置 */
+.request-wrapper {
+  padding: 80px 300px;
+  font-size: 20px;
+}
+
+/* 見出し */
+.request-title {
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.request-title span{
+  margin-right: 20px;
+  font-weight: 900;
+  color: #F07F7F;
+}
+
+/* フォーム */
+form div {
+  margin-bottom: 20px;
+  padding-top: 5px;
+}
+
+.type-select,
+.message {
+  background: rgba(255, 255, 255, .5);
+  border: 1px #fff solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  display: block;
+}
+
+.type-select {
+  width: 100%;
+  max-width: 400px;
+}
+
+.message {
+  width: 100%;
+  max-width: 480px;
+  height: 10rem;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  line-height: 30px;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background-color: #56c9c9;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #45a1a1;
+}
+
+/* リクエスト一覧のリンク */
+.post {
+  color: blue;
 }
