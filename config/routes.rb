@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'requests/index'
-  get 'requests/new'
   devise_for :users
   root to: "books#index"
 

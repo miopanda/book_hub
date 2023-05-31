@@ -1,0 +1,5 @@
+.request-index-wrapper {
+  padding: 80px 200px;
+  display: flex;
+  flex-direction: column;
+}
