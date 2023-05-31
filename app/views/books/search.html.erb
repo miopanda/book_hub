@@ -2,6 +2,13 @@
 
 <div class="main">
   <div class="main-contents">
+
+  <% if flash[:notice] %>
+    <div class="flash-notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
     <div class="contents-title"><span>■</span>本を検索する</div>
 
     <div class="section-title">キーワード検索</div>
@@ -9,7 +16,7 @@
           <%= form_with(url: search_books_path, method: :get, local: true) do |f| %>
             <%= f.text_field :keyword, placeholder: "タイトル、キーワードなど", class: "keyword" %>
             <%= f.submit "検索", class: "search-btn" %>
-            <%# <%= button_tag "クリア", class: "clear-search-btn" %>
+            <%= button_tag "クリア", class: "clear-search-btn" %>
           <% end %>
       </div>
 
@@ -25,29 +32,42 @@
 
 <div class="book-list-wrapper">
 
-  <h2 class="contents-title">登録本リスト</h2>
+  <h2 class="contents-title">登録本リスト - 検索結果</h2>
 
   <ul class="book-lists">
-
     <% @books.each do |book| %>
-        <li class='list'>
-          <%= link_to book_path(book.id) do %>
-            <div class="list-container">
-              <div class='book-img-content'>
-                <%= image_tag book.image_url, class: "book-img" %>
+      <li class='list'>
+        <%= link_to book_path(book.id) do %>
+          <div class="list-container">
+            <div class='book-img-content'>
+              <%= image_tag book.image_url, class: "book-img" %>
+            </div>
+            <div class='book-info'>
+              <div class='book-title'>
+                <%= book.title %>
               </div>
-              <div class='book-info'>
-                <div class='book-title'>
-                  <%= book.title %>
-                </div>
-                <div class='book-publisher'>
-                  <%= book.publisher %>
-                </div>
+              <div class='book-publisher'>
+                <%= book.publisher %>
               </div>
             </div>
-          <% end %>
-        </li>
-      <% end %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".clear-search-btn").on("click", function(event) {
+      event.preventDefault();
+      window.location.href = "<%= root_path %>";
+    });
+  });
+</script>
+
+
+
+
