@@ -14,6 +14,8 @@
   border-radius: 20px;
   padding: 80px 100px;
   height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* 検索バー */
@@ -49,7 +51,7 @@
   height: 60px;
   border-radius: 10px;
   cursor: pointer;
-  margin-left: 15px;
+  margin-left: 5px;
   background-color: #7DC5C5;
   border: none;
 }
