@@ -12,7 +12,7 @@
 
 /* フォーム位置 */
 .request-wrapper {
-  padding: 80px 300px;
+  padding: 80px 200px;
   font-size: 20px;
 }
 
@@ -71,6 +71,11 @@ form div {
 }
 
 /* リクエスト一覧のリンク */
-.post {
+.link {
   color: blue;
+}
+
+.link:hover {
+  color: #dc6688;
+  text-decoration: inherit;
 }

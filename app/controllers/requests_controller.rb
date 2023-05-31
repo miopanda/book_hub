@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create]
 
   def index
-    @requests = Request.order("created_at DESC")
+    @requests = Request.includes(:user).where(user_id: current_user.id).order("created_at DESC")
   end
 
   def new
@@ -12,8 +12,9 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    @request.user_id = current_user.id
     if @request.save
-      redirect_to root_path
+      redirect_to requests_path
     else
       render :new
     end
@@ -22,6 +23,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:request_type_id, :message, :resolved).merge(user_id: current_user.id)
+    params.require(:request).permit(:request_type_id, :message, :resolved)
   end
 end

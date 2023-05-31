@@ -1,16 +1,46 @@
-<div class="requests-index-wrapper">
+<%= render "shared/second-header" %>
+
+<div class="request-index-wrapper">
 
   <h3 class="request-title">リクエスト一覧</h3>
 
-  <% @requests.each do |request| %>
-    <div class="request">
-      <div class="request-type">
-        <%= request.request_type.name %>
-      </div>
-      <div class="request-message">
-        <%= request.message %>
-      </div>
-    </div>
+  <% if user_signed_in? %>
+    <% if @requests.empty? %>
+      <p>投稿履歴はありません</p>
+    <% else %>
+      <% @requests.each do |request| %>
+        <div class="request-contents">
+        <% if request.user_id == current_user.id %>
+          <div class="request">
+            
+
+            <div class="request-info">
+              <div class="info-left">
+                <div class="request-type">
+                  <%= request.request_type.name %>
+                </div>
+                <div class="user-name">
+                  <%= "by：#{current_user.name}さん" %>
+                </div>
+              </div>
+              <div class="request-date">
+                <%= request.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M") %>
+              </div>
+            </div>
+
+            <div class="request-message">
+              <%= request.message %>
+            </div>
+            
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>ログインしていません</p>
   <% end %>
+
+  <%= link_to "リクエスト投稿へもどる", new_request_path, class:"link" %>
 
 </div>
