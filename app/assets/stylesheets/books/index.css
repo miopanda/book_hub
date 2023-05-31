@@ -51,6 +51,11 @@
   border: 2px solid #ccc;
 }
 
+.submit:hover {
+  background-color: #7d7d7d;
+  color: #fff;
+}
+
 .genre-list {
   display: flex;
   justify-content: space-between;
