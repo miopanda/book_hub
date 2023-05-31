@@ -27,6 +27,11 @@ https://bookhub-bh9c.onrender.com
 3. 返却は、トップページ書籍一覧またはヘッダーのユーザーマイページ貸出履歴から書籍詳細ページへアクセスし、
    「返却する」から「返却」ボタンクリックで返却が完了する（返却完了でトップページへ遷移する）
 
+## リクエストする
+1. トップページの「リクエストする」ボタンを押す
+2. 本の購入りクエストや貸出返却に関すること等をフォームに入力して問い合わせる事ができる
+3. 投稿フォーム下部の「リクエスト一覧」からリクエストした履歴が確認できる
+
 # アプリケーションを作成した背景
 オフィス内に散在する本が活用されていない状況を勿体無いと思ったことがきっかけ。
 アプリケーションで管理すれば、備品としても管理しやすく、
@@ -44,7 +49,7 @@ https://docs.google.com/spreadsheets/d/1Vmngigcma3A-DWuDpacijJWO6sQYdDQlLaKbuy0A
 
 # テーブル設計
 
-[![Image from Gyazo](https://i.gyazo.com/2d748cb817285927087f9d6f1956cad9.png)](https://gyazo.com/2d748cb817285927087f9d6f1956cad9)
+[![Image from Gyazo](https://i.gyazo.com/4b731eb9949a2b735cdc3671cd6944d4.png)](https://gyazo.com/4b731eb9949a2b735cdc3671cd6944d4)
 
 ## users テーブル
 
@@ -60,6 +65,7 @@ https://docs.google.com/spreadsheets/d/1Vmngigcma3A-DWuDpacijJWO6sQYdDQlLaKbuy0A
 - has_many :books
 - has_many :loans
 - has_many :borrowed_books, through: :loans, source: :book
+- has_many :requests
 
 ## books テーブル
 
@@ -89,6 +95,19 @@ https://docs.google.com/spreadsheets/d/1Vmngigcma3A-DWuDpacijJWO6sQYdDQlLaKbuy0A
 
 - belongs_to :user
 - belongs_to :book
+
+## requests テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| request_type_id   | integer | null: false |
+| message    | text   | null: false |
+| resolved   | boolean| default: false |
+| user   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
 
 
 # 開発環境
