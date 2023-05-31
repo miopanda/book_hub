@@ -8,7 +8,7 @@
       <div class="book-search">
           <%= form_with(url: '#', method: :get, local: true) do |f| %>
             <%= f.text_field :keyword, placeholder: "タイトル、キーワードなど", class: "keyword" %>
-            <%= f.submit "検索", class: "submit" %>
+            <%= f.submit "検索", class: "search-btn" %>
           <% end %>
       </div>
 

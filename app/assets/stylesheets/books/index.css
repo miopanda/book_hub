@@ -43,16 +43,18 @@
   border: 3px solid #ccc;
 }
 
-.submit {
+.search-btn {
   width: 100px;
   height: 60px;
   border-radius: 10px;
   cursor: pointer;
-  border: 2px solid #ccc;
+  margin-left: 15px;
+  background-color: #7DC5C5;
+  border: none;
 }
 
-.submit:hover {
-  background-color: #7d7d7d;
+.search-btn:hover {
+  background-color: #5a9f9f;
   color: #fff;
 }
 
