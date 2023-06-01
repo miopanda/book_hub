@@ -1,23 +1,28 @@
 .about-wrapper {
   display: flex;
-  
+  flex-direction: column;
+  padding-top: 70px;
 }
 
-.about-page-img {
-  background-image: url('bookhub_about_bg.jpg');
-  width: 21%;
-  height: auto;
-  opacity: 0.8;
-  /* object-fit: contain; */
+.about-contents {
+  /* border: 1px solid #9c8a8a; */
+  border-radius: 20px;
+  margin: 0 auto;
+  width: 800px;
+  height: 500px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  padding: 20px 50px;
 }
 
-.about {
-  height: 100vh;
-  width: calc(100vw - 21%);
+.header-area {
+  border-bottom: 1px solid #ccc;
 }
 
 .about-title {
-  font-size: 50px;
-  font-weight: 600;
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+  font-size: 25px;
+}
+
+.about-title span {
+  font-weight: normal;
+  font-size: 18px;
 }
