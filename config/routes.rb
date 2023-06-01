@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :loans, only: [:new, :create, :edit, :update]
     collection do
       get 'search'
+      get 'about'
     end
   end
 
