@@ -1,0 +1,23 @@
+.about-wrapper {
+  display: flex;
+  
+}
+
+.about-page-img {
+  background-image: url('bookhub_about_bg.jpg');
+  width: 21%;
+  height: auto;
+  opacity: 0.8;
+  /* object-fit: contain; */
+}
+
+.about {
+  height: 100vh;
+  width: calc(100vw - 21%);
+}
+
+.about-title {
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+}

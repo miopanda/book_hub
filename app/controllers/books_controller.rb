@@ -32,6 +32,9 @@ class BooksController < ApplicationController
     flash[:notice] = "検索完了" if params[:keyword].present?
   end
   
+  def about
+    
+  end
 
   private
 
