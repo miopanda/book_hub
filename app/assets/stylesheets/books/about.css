@@ -9,20 +9,26 @@
   border-radius: 20px;
   margin: 0 auto;
   width: 800px;
-  height: 500px;
+  height: 550px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
   padding: 20px 50px;
 }
 
-.header-area {
-  border-bottom: 1px solid #ccc;
-}
-
 .about-title {
   font-size: 25px;
+  border-bottom: 1px solid #ccc;
 }
 
 .about-title span {
   font-weight: normal;
   font-size: 18px;
+}
+
+.text-area {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.text-area span {
+  font-size: 14px;
 }

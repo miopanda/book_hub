@@ -18,3 +18,8 @@
   text-align: center;
   color: red;
 }
+
+.link {
+  text-decoration: underline;
+  padding-top: 15px;
+}
