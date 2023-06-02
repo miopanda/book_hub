@@ -1,8 +1,26 @@
-<%# <%= render "shared/second-header" %>
+<%= render "shared/second-header" %>
 
 <div class="about-wrapper">
-  <div class="about-page-img"></div>
-  <div class="about">
-    <h3 class="about-title">BookHubについて</h3>
+  <div class="about-contents">
+    <div class="head-area">
+      <h3 class="about-title">BookHubとは<br><span>about</span></h3>
+    </div>
+    <div class="text-area">
+      <p>このアプリケーションは、オフィスの中で置物のようになっている本を<br>
+      活用したいという気持ちから作りました。</p>
+      <p>機能はシンプルです。<br>
+      「本を登録すること」「本の貸出・返却をすること」ができます。</p>
+      <p>
+      仕事のために購入した本が机の上に置かれたままになっていませんか？<br>
+      その本をBookHubに登録すれば、誰かの役に立つかもしれません。<br>
+      （トップページ<%= link_to '「本を登録する」', new_book_path %>から登録<span> ※ログインが必要です）</span>
+      </p>
+      <p>本を借りることもできます。<br>
+      社内の誰かが買った本です。きっと参考になるのではないでしょうか。</p>
+      <p>ぜひ使ってみてください。</p>
+    </div>
+    <div>
+      <%= link_to "HOME", root_path, class:"link" %>
+    </div>
   </div>
 </div>
