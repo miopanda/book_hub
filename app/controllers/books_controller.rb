@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     # @books = Book.includes(:user).order("created_at ASC")
-    @books = Book.paginate(page: params[:page], per_page: 9)
+    @books = Book.paginate(page: params[:page], per_page: 6)
   end
 
   def new

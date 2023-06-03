@@ -30,6 +30,10 @@
   color: #F07F7F;
 }
 
+.contents-text {
+  font-size: 18px;
+}
+
 .section-title {
   font-size: 1.5rem;
   margin-top: 3rem;
