@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   before_action :move_to_index, only: [:new, :create]
 
   def index
-    @books = Book.includes(:user).order("created_at ASC")
+    # @books = Book.includes(:user).order("created_at ASC")
+    @books = Book.paginate(page: params[:page], per_page: 9)
   end
 
   def new

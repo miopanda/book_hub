@@ -60,3 +60,6 @@ end
 gem 'devise'
 gem 'pry-rails'
 gem 'active_hash'
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate', '~> 1.0'

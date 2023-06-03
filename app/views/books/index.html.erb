@@ -48,6 +48,11 @@
           <% end %>
         </li>
       <% end %>
-  </ul>
 
+  </ul>
+  <div class="pagination">
+     <%= will_paginate @books %>
+    <%# <%= will_paginate @books, renderer: BootstrapPagination::Rails %>
+    <%# <%= will_paginate(@books, renderer: WillPaginate::ActionView::BootstrapLinkRenderer) %>
+  </div>
 </div>

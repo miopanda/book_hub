@@ -64,3 +64,31 @@
 .book-title {
   margin-bottom: 15px;
 }
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  /* background-color: #eee; */
+  background-color: #fff;
+  color: #333;
+}
+
+.pagination .active a {
+  background-color: #7DC5C5;
+  color: #fff;
+}
