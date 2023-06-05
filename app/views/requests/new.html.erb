@@ -7,19 +7,19 @@
 
     <%= form_with model: @request, local: true do |f| %>
       <div class="request-form">
-        <div>
+        <div class="form-div">
           <label for="name">お名前：</label>
           <% if user_signed_in? %>
             <%= "#{@user.name}さん" %>
           <% end %>
         </div>
 
-        <div>
+        <div class="form-div">
           <label for="request_type">お問合せ内容</label>
           <%= f.collection_select(:request_type_id, RequestType.all, :id, :name, {}, {class:"type-select"}) %>
         </div>
 
-        <div>
+        <div class="form-div">
           <label for="request-message">お問合せ内容をご記入ください</label>
           <%= f.text_area :message, id:"message", class:"message", placeholder:"メッセージ" %>
         </div>
