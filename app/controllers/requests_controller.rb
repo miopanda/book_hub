@@ -13,12 +13,23 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user_id = current_user.id
-    if @request.save
+  
+    if @request.request_type_id.blank? || @request.message.blank?
+      flash.now[:error] = "お問い合わせ内容を入力してください。"
+      @user = current_user
+      render :new
+    elsif @request.save
       redirect_to requests_path
     else
-      render :new
+      flash.now[:error] = "リクエストの保存に失敗しました。"
+      @user = current_user
+      respond_to do |format|
+        format.html { render :new }
+        format.js { render 'error' }
+      end
     end
   end
+  
 
   private
 
