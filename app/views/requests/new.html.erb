@@ -1,11 +1,26 @@
-<div id="request" class="big-bg">
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('new_request').addEventListener('ajax:success', function(event) {
+      const [data, status, xhr] = event.detail;
+      if (xhr.getResponseHeader('Content-Type').indexOf('text/javascript') >= 0) {
+        eval(data);
+      }
+    });
+  });
+</script>
 
+
+
+
+<div id="request" class="big-bg">
   <div class="request-wrapper">
     <h2 class="request-title"><span>■</span>リクエスト</h2>
     <p>本の購入リクエストや貸出・返却についてなど何かございましたら、<br>
     以下のフォームよりお問い合わせください。</p>
 
     <%= form_with model: @request, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
       <div class="request-form">
         <div class="form-div">
           <label for="name">お名前：</label>
@@ -35,5 +50,4 @@
       <%= link_to "HOME", root_path, class:"link" %>
     </div>
   </div>
-
 </div>
