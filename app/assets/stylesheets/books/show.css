@@ -20,12 +20,28 @@
   font-size: 2rem;
 }
 
+.book-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.publisher {
+  display: flex;
+  justify-content: center;
+}
+
 .links {
   padding-top: 20px;
 }
 
 .change-book-btn {
   margin-left: 20px;
+}
+
+#book-status {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 .status-btn{
@@ -36,6 +52,12 @@
   text-align: center;
   /* align-items: center; */
   line-height: 40px;
+  margin: 0 auto;
+}
+
+.book-lend-btn {
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 .blue{
