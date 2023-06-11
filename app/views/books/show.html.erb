@@ -20,11 +20,11 @@
           <% if @book.loans.present? && @book.loans.find_by(returned: false) %>
             <p class="status-btn pink">貸出中</p>
             <% if user_signed_in? && @book.loans.find_by(returned: false).user_id == current_user.id %>
-              <%= link_to "返却する", edit_book_loan_path(@book, @book.loans.find_by(returned: false)), class: "book-red-btn" %>
+              <%= link_to "返却する", edit_book_loan_path(@book, @book.loans.find_by(returned: false)), class: "book-lend-btn" %>
             <% end %>
           <% else %>
             <p class="status-btn blue">貸出可</p>
-            <%= link_to "貸出を申請する", "#", class: "book-red-btn", id: "lend-btn" %>
+            <%= link_to "貸出を申請する", "#", class: "book-lend-btn", id: "lend-btn" %>
           <% end %>
       <% end %>
     </div>
