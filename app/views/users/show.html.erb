@@ -2,21 +2,23 @@
 
 <div class="book-list-wrapper">
 
-  <h2 class="page-heading">
-    <%= "#{@name}さんの情報"%>
-  </h2>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th class="table__col1">名前</th>
-        <td class="table__col2"><%= @name %></td>
-      </tr>
-      <tr>
-        <th class="table__col1">メールアドレス</th>
-        <td class="table__col2"><%= @email %></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="user-info-wrapper">
+    <h2 class="page-heading">
+      <%= "#{@name}さんの情報"%>
+    </h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th class="table__col1">名前</th>
+          <td class="table__col2"><%= @name %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">メールアドレス</th>
+          <td class="table__col2"><%= @email %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <h2 class="page-heading">
     <%= "#{@name}さんの貸出履歴"%>
