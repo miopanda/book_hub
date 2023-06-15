@@ -32,14 +32,14 @@
   </div>
 
 
-  <div class="links">
+  <%# <div class="links">
       <a href="#" class="change-book-btn">
         ＜ 前の本
       </a>
       <a href="#" class="change-book-btn">
         後ろの本 ＞
       </a>
-  </div>
+  </div> %>
 </div>
 
 <%# 貸出確認ダイアログ %>
@@ -80,31 +80,3 @@
 </div>
 
 <%# 貸出確認ダイアログここまで %>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $("#close-btn").on("click", function(){
-      $("#confirmation-dialog").hide();
-    });
-  });
-  
-  $(document).ready(function() {
-    var dueDate = new Date();
-    dueDate.setDate(dueDate.getDate() + 14); // 今日の日付から2週間後の日付を計算
-    var year = dueDate.getFullYear();
-    var month = ("0" + (dueDate.getMonth() + 1)).slice(-2);
-    var day = ("0" + dueDate.getDate()).slice(-2);
-    var formattedDate = year + "-" + month + "-" + day;
-    $("#due-date").text(formattedDate); // IDはハイフンを使用
-
-    $("#lend-btn").on("click", function() {
-      $("#confirmation-dialog").fadeIn();
-    });
-
-    $("form").on("submit", function(event) {
-      $("#hidden-due-date").val(formattedDate); 
-      return true;
-    });
-  });
-</script>

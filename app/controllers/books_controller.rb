@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       redirect_to root_path
-      flash[:notice] = "本が登録されました"
+      # flash[:notice] = "本が登録されました"
     else
       render :new
     end
