@@ -6,6 +6,7 @@ BookHub（ブックハブ）
 
 # URL
 https://bookhub-bh9c.onrender.com
+（Renderの仕様により接続に少し時間がかかります）
 
 # テスト用アカウント
 - Basic認証ID : admin
